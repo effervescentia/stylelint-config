@@ -1,0 +1,23 @@
+{
+  "name": "stylelint-config-tkstr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/effervescentia/stylelint-config",
+  "author": "Ben Teichman <ben.l.teichman@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "stylelint": ">= 13"
+  },
+  "scripts": {
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^17.1.1"
+  },
+  "dependencies": {
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0"
+  }
+}

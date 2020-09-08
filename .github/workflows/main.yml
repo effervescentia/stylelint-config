@@ -1,0 +1,26 @@
+name: Release
+on: [push]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+
+      - name: Setup Yarn
+        run: npm install -g yarn
+
+      - name: Install Node Dependencies
+        run: yarn install
+
+      - name: Run Semantic Release
+        if: github.ref == 'refs/heads/master'
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
